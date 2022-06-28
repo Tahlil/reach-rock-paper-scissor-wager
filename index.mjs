@@ -9,3 +9,12 @@ const addBob = await stdlib.newTestAccount(startingBalance);
 
 const ctcAlice = accAlice.contract(backend);
 const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
+
+await Promise.all([
+    ctcAlice.p.Alice({
+
+    }),
+    ctcAlice.p.Bob({
+
+    }),
+])
