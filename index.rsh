@@ -1,4 +1,4 @@
-'reach 0.1'
+'reach 0.1';
 
 const Player = {
     getHand: Fun([], UInt),
@@ -6,7 +6,7 @@ const Player = {
 };
 
 export const main = Reach.App(() => {   
-    const Alice = Participant('ALice', {
+    const Alice = Participant('Alice', {
         ...Player
     });
 
@@ -16,9 +16,9 @@ export const main = Reach.App(() => {
     init();
 
     Alice.only(() => {
-        const handALice = declassify(interact.getHand());
+        const handAlice = declassify(interact.getHand());
     });
-    Alice.publish(handALice);
+    Alice.publish(handAlice);
     commit();
 
     Bob.only(() => {
@@ -26,7 +26,7 @@ export const main = Reach.App(() => {
     });
     Bob.publish(handBob);
 
-    const outcome = (handALice + (4- handBob)) % 3;
+    const outcome = (handAlice + (4- handBob)) % 3;
     commit();
 
     each([Alice, Bob], () => {
