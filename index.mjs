@@ -19,7 +19,7 @@ const Player = (Who) => ({
         return hand;
     },
     seeOutcome: (outcome) => {
-        console.log(`${Who} saw outcome ${OUTCOME[outcome]});
+        console.log(`${Who} saw outcome ${OUTCOME[outcome]}`);
     }
 })
 
