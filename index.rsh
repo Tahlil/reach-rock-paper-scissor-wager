@@ -10,7 +10,7 @@ export const main = Reach.App(() => {
         ...Player
     });
 
-    const Bob = Participant('ALice', {
+    const Bob = Participant('Bob', {
         ...Player
     });
     init();
