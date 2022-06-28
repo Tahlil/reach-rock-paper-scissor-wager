@@ -13,4 +13,5 @@ export const main = Reach.App(() => {
     const Bob = Participant('ALice', {
         ...Player
     });
+    init();
 })
