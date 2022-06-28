@@ -7,7 +7,6 @@ To compile:
 ./reach compile
 ```
 To run:
-To compile:
 ```
 ./reach run
 ```
