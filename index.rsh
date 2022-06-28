@@ -28,4 +28,8 @@ export const main = Reach.App(() => {
 
     const outcome = (handALice + (4- handBob)) % 3;
     commit();
+
+    each([Alice, Bob], () => {
+        interact.seeOutcome(outcome);
+    });
 })
