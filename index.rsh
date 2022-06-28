@@ -14,4 +14,10 @@ export const main = Reach.App(() => {
         ...Player
     });
     init();
+
+    Alice.only(() => {
+        const handALice = declassify(interact.getHand());
+    });
+    Alice.publish(handALice);
+    Alice.commit();
 })
