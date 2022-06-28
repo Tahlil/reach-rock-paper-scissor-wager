@@ -19,5 +19,13 @@ export const main = Reach.App(() => {
         const handALice = declassify(interact.getHand());
     });
     Alice.publish(handALice);
-    Alice.commit();
+    commit();
+
+    Bob.only(() => {
+        const handBob = declassify(interact.getHand());
+    });
+    Bob.publish(handBob);
+
+    const outcome = (handALice + (4- handBob)) % 3;
+    commit();
 })
