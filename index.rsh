@@ -7,11 +7,13 @@ const Player = {
 
 export const main = Reach.App(() => {   
     const Alice = Participant('Alice', {
-        ...Player
+        ...Player,
+        wager: UInt,
     });
 
     const Bob = Participant('Bob', {
-        ...Player
+        ...Player,
+        acceptWager: Fun([UInt], Null),
     });
     init();
 
