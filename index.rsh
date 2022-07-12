@@ -47,13 +47,22 @@ export const main = Reach.App(() => {
     .pay(wager);
     commit();
 
-    unknowable(Bob, Alice(handAlice));
+    unknowable(Bob, Alice(_handAlice, _saltAlice));
     Bob.only(() => {
         interact.acceptWager(wager);
         const handBob = declassify(interact.getHand());
     });
     Bob.publish(handBob)
     .pay(wager);
+    commit();
+
+    Alice.only(() => {
+        const saltAlice = declassify(_saltAlice);
+        const handAlice = declassify(_handAlice);
+      });
+      Alice.publish(saltAlice, handAlice);
+      
+     checkCommitment(commitAlice, saltAlice, handAlice);
 
     const outcome = (handAlice + (4- handBob)) % 3;
     const            [forAlice, forBob] =
