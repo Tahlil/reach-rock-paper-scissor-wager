@@ -20,6 +20,7 @@ forall(UInt, (hand) =>
 assert(winner(hand, hand) == DRAW));
 
 const Player = {
+    ...hasRandom,
     getHand: Fun([], UInt),
     seeOutcome: Fun([UInt], Null)
 };
