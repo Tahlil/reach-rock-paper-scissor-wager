@@ -25,6 +25,7 @@ export const main = Reach.App(() => {
     .pay(wager);
     commit();
 
+    unknowable(Bob, Alice(handAlice));
     Bob.only(() => {
         interact.acceptWager(wager);
         const handBob = declassify(interact.getHand());
