@@ -39,9 +39,11 @@ export const main = Reach.App(() => {
 
     Alice.only(() => {
         const wager = declassify(interact.wager);
-        const handAlice = declassify(interact.getHand());
+        const _handAlice = interact.getHand();
+        const [_commitALice, _saltAlice] = makeCommitment(interact, _handAlice);
+        const commitAlice = declassify(_commitALice);
     });
-    Alice.publish(wager,handAlice)
+    Alice.publish(wager, commitAlice)
     .pay(wager);
     commit();
 
